@@ -164,10 +164,10 @@
 
 ;;;###autoload
 (define-minor-mode persp-mode-projectile-bridge-mode
-  :require 'persp-projectile
-  :group 'persp-projectile
   "`persp-mode' and `projectile-mode' integration.
 Creates perspectives for projectile projects."
+  :require 'persp-mode-projectile-bridge
+  :group 'persp-mode-projectile-bridge
   :init-value nil
   :global t
 
