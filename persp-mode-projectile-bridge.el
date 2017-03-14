@@ -4,7 +4,7 @@
 ;;
 ;; Author: Constantin Kulikov (Bad_ptr) <zxnotdead@gmail.com>
 ;; Version: 0.1
-;; Package-Requires: (persp-mode projectile)
+;; Package-Requires: (persp-mode projectile (cl-lib "0.5"))
 ;; Date: 2017/03/04 10:10:41
 ;; License: GPL either version 3 or any later version
 ;; Keywords: persp-mode, projectile
@@ -57,6 +57,7 @@
 
 (require 'persp-mode)
 (require 'projectile)
+(require 'cl-lib)
 
 
 (defvar persp-mode-projectile-bridge-mode nil)
@@ -155,7 +156,7 @@
   (when (and persp-mode projectile-mode)
     (mapc #'persp-kill
           (mapcar #'persp-name
-                  (delete-if-not
+                  (cl-delete-if-not
                    (apply-partially
                     #'persp-parameter
                     'persp-mode-projectile-bridge)
@@ -164,6 +165,7 @@
 
 ;;;###autoload
 (define-minor-mode persp-mode-projectile-bridge-mode
+  ""
   :require 'persp-projectile
   :group 'persp-projectile
   :init-value nil
