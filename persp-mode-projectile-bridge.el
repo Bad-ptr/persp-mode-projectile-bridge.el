@@ -165,6 +165,7 @@
 
 ;;;###autoload
 (define-minor-mode persp-mode-projectile-bridge-mode
+  ""
   :require 'persp-projectile
   :group 'persp-projectile
   :init-value nil
