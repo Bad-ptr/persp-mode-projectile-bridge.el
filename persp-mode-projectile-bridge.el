@@ -117,7 +117,7 @@
             persp))))))
 
 (defvar persp-mode-projectile-bridge-before-switch-selected-window-buffer nil)
-(defun persp-mode-projectile-bridge-hook-before-switch (&rest args)
+(defun persp-mode-projectile-bridge-hook-before-switch (&rest _args)
   (let ((win (if (minibuffer-window-active-p (selected-window))
                  (minibuffer-selected-window)
                (selected-window))))
@@ -125,7 +125,7 @@
       (setq persp-mode-projectile-bridge-before-switch-selected-window-buffer
             (window-buffer win)))))
 
-(defun persp-mode-projectile-bridge-hook-switch (&rest args)
+(defun persp-mode-projectile-bridge-hook-switch (&rest _args)
   (let ((persp
          (persp-mode-projectile-bridge-find-perspective-for-buffer
           (current-buffer))))
@@ -140,7 +140,7 @@
             (setq persp-mode-projectile-bridge-before-switch-selected-window-buffer nil))))
       (persp-frame-switch (persp-name persp)))))
 
-(defun persp-mode-projectile-bridge-hook-find-file (&rest args)
+(defun persp-mode-projectile-bridge-hook-find-file (&rest _args)
   (let ((persp
          (persp-mode-projectile-bridge-find-perspective-for-buffer
           (current-buffer))))
