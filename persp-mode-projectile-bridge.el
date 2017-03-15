@@ -4,7 +4,7 @@
 ;;
 ;; Author: Constantin Kulikov (Bad_ptr) <zxnotdead@gmail.com>
 ;; Version: 0.1
-;; Package-Requires: (persp-mode projectile (cl-lib "0.5"))
+;; Package-Requires: ((persp-mode "2.9") (projectile "0.13.0") (cl-lib "0.5"))
 ;; Date: 2017/03/04 10:10:41
 ;; License: GPL either version 3 or any later version
 ;; Keywords: persp-mode, projectile
